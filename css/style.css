@@ -1,10 +1,20 @@
+:root {
+  --text-colour: #201e20;
+  --bg-colour: #8FC9A3;
+}
+
+[data-theme="dark"] {
+  --text-colour: #8FC9A3;
+  --bg-colour: #201e20;
+}
+
 a:link {
-    color: #8FC9A3;
+    color: var(--text-colour);
     text-decoration: none;
 }
 /* visited link */
 a:visited {
-  color: #8FC9A3;
+  color: var(--text-colour);
 }
 /* mouse over link */
 a:hover {
@@ -16,7 +26,7 @@ a:active {
 }
 
 body   {
-    background-color: #201e20;
+    background-color: var(--bg-colour);
 }
 
 h1, h2, h3{
@@ -33,7 +43,7 @@ h1{
 
     position: absolute;
     min-width: 300px;
-    color: #8FC9A3;
+    color: var(--text-colour);
     
 }
 
@@ -46,7 +56,7 @@ h2 {
     transform: translate(8%, 220%);
 
     position: absolute;
-    color: #8FC9A3;
+    color: var(--text-colour);
 }
 
 h3 {
