@@ -1,2 +1,2 @@
-# GregSherman.ca
+# gregsherman.ca
 Personal website &amp; portfolio
