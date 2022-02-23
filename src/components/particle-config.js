@@ -46,10 +46,10 @@ const particleConfig = {
         }
       },
       line_linked: {
-        enable: false,
-        distance: 48.1022172115746,
+        enable: true,
+        distance: 30.0,
         color: "#ffffff",
-        opacity: 0.4,
+        opacity: 0.1,
         width: 1
       },
       move: {
@@ -58,7 +58,7 @@ const particleConfig = {
         direction: "none",
         random: true,
         straight: false,
-        out_mode: "out",
+        out_mode: "bounce",
         bounce: false,
         attract: {
           enable: false,
@@ -71,12 +71,12 @@ const particleConfig = {
       detect_on: "canvas",
       events: {
         onhover: {
-          enable: true,
-          mode: "bubble"
-        },
-        onclick: {
           enable: false,
           mode: "repulse"
+        },
+        onclick: {
+          enable: true,
+          mode: "push"
         },
         resize: true
       },
@@ -84,7 +84,7 @@ const particleConfig = {
         grab: {
           distance: 400,
           line_linked: {
-            opacity: 1
+            opacity: 0.2
           }
         },
         bubble: {
@@ -95,11 +95,11 @@ const particleConfig = {
           speed: 3
         },
         repulse: {
-          distance: 400,
-          duration: 0.4
+          distance: 0,
+          duration: 0
         },
         push: {
-          particles_nb: 4
+          particles_nb: 40
         },
         remove: {
           particles_nb: 2
