@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ParticleBG from "./components/ParticleBG";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return(
+        <div>
+        <ParticleBG/>
+        <div className="mainPage">
+            <h1 className="bigName">greg sherman</h1>
+            <p className="subText">under construction</p>
+            <a href="https://github.com/GregSherman" className="link">GitHub  </a>
+            <a href="resources/Greg Resume.pdf" className="link">  Resume  </a>
+            <a href="https://www.linkedin.com/in/greg-sherman-aa20101b5/" className="link">  LinkedIn  </a>
+            <a href="mailto: greg.sherman@mail.utoronto.ca" className="link">  Email  </a>
+        </div>
+        </div>
+    );
 }
 
 export default App;
