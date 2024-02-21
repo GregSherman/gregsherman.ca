@@ -1,3 +1,3 @@
-# Personal Website & Portfolio
+# Greg Sherman
 
-Using ReactJS
+My website, enjoy....
