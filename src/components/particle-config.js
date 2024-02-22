@@ -8,7 +8,7 @@ const particleConfig = {
         }
       },
       color: {
-        value: "#8fc9a3"
+        value: "#fe4c52"
       },
       shape: {
         type: "circle",
