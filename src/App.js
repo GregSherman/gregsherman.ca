@@ -33,6 +33,10 @@ export default class App extends Component {
     };
     window.addEventListener("resize", handleResize);
 
+    let name = "Greg Sherman"
+    if (process.env.KAT !== undefined) {
+      name = "Katerina Benevides"
+    }
     return (
       <div>
         <div id="wave-container">
@@ -43,7 +47,7 @@ export default class App extends Component {
           />
         </div>
         <div className="name-container">
-          <h1 className="name">GREG SHERMAN</h1>
+          <h1 className="name">{name}</h1>
         </div>
         <div className="links-container">
           <a
