@@ -19,6 +19,20 @@ export default class App extends Component {
 
   render() {
     const { config } = this.state;
+    let resizeTimer;
+
+    // On finish resize, the canvas is destroyed and re-created, so we need to re-add the splats
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+
+      resizeTimer = setTimeout(() => {
+        this._animation.addSplats(
+          Array.from({ length: 20 }, () => this._getRandomSplat())
+        );
+      }, 50);
+    };
+    window.addEventListener("resize", handleResize);
+
     return (
       <div>
         <div id="wave-container">
@@ -85,23 +99,24 @@ export default class App extends Component {
     var dx = 2000 * (Math.random() - 0.5);
     var dy = 2000 * (Math.random() - 0.5);
 
+    // If required, ensure that the splats move over the name to make it more visible
     if (restrictToName) {
       x = width * (0.4 + Math.random() * 0.2);
       y = height * (0.4 + Math.random() * 0.2);
     }
-    
+
     return {
       x: x,
       y: y,
       dx: dx,
       dy: dy,
-      color: color
+      color: color,
     };
   }
 
   _animationRef = (ref) => {
     this._animation = ref;
-    
+
     const splats = [];
     for (var i = 0; i < 60; i++) {
       splats.push(this._getRandomSplat());
@@ -113,5 +128,9 @@ export default class App extends Component {
     this._interval = setInterval(() => {
       this._animation.addSplats([this._getRandomSplat(true)]);
     }, 4000 + Math.random() * 4000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._interval);
   }
 }
