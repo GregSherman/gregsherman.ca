@@ -22,6 +22,10 @@ body {
   padding: 0;
 }
 
+canvas {
+  pointer-events: none;
+}
+
 .name-container {
   position: absolute;
   display: flex;

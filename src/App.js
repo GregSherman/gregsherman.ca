@@ -4,12 +4,12 @@ import "./App.css";
 
 const defaultConfig = {
   textureDownsample: 0.2,
-  densityDissipation: 0.99,
-  velocityDissipation: 0.99,
+  densityDissipation: 1,
+  velocityDissipation: 1,
   pressureDissipation: 0.9,
   pressureIterations: 25,
   curl: 40,
-  splatRadius: 0.005,
+  splatRadius: 0.01,
 };
 
 export default class App extends Component {
@@ -69,15 +69,49 @@ export default class App extends Component {
     );
   }
 
+  _getRandomSplat(restrictToName = false) {
+    const container = document.getElementById("wave-container");
+    const canvas = container.querySelector("canvas");
+    const width = canvas.width;
+    const height = canvas.height;
+
+    var color = [
+      1 + Math.random() * 1,
+      Math.random() * 1,
+      2 + Math.random() * 7,
+    ];
+    var x = width * Math.random();
+    var y = height * Math.random();
+    var dx = 2000 * (Math.random() - 0.5);
+    var dy = 2000 * (Math.random() - 0.5);
+
+    if (restrictToName) {
+      x = width * (0.4 + Math.random() * 0.2);
+      y = height * (0.4 + Math.random() * 0.2);
+    }
+    
+    return {
+      x: x,
+      y: y,
+      dx: dx,
+      dy: dy,
+      color: color
+    };
+  }
+
   _animationRef = (ref) => {
     this._animation = ref;
-    this._animation.addRandomSplats(14);
+    
+    const splats = [];
+    for (var i = 0; i < 60; i++) {
+      splats.push(this._getRandomSplat());
+    }
+    this._animation.addSplats(splats);
   };
 
   componentDidMount() {
     this._interval = setInterval(() => {
-      const count = Math.floor(Math.random() * 6) + 1;
-      this._animation.addRandomSplats(count);
-    }, Math.floor(Math.random() * 4000) + 2000);
+      this._animation.addSplats([this._getRandomSplat(true)]);
+    }, 4000 + Math.random() * 4000);
   }
 }
