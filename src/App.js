@@ -8,7 +8,7 @@ const defaultConfig = {
   velocityDissipation: 0.99,
   pressureDissipation: 0.9,
   pressureIterations: 25,
-  curl: 100,
+  curl: 40,
   splatRadius: 0.005,
 };
 
