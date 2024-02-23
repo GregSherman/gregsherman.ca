@@ -33,10 +33,38 @@ export default class App extends Component {
     };
     window.addEventListener("resize", handleResize);
 
-    let name = "Greg Sherman"
-    if (process.env.KAT !== undefined) {
-      name = "Katerina Benevides"
+    let name;
+    let links;
+    if (process.env.REACT_APP_SITE_NAME === "Kat") {
+      name = "KAT BENEVIDES";
+      links = {
+        Resume: "",
+        Email: "mailto:astro@katbenevides.com",
+      };
+    } else {
+      name = "GREG SHERMAN";
+      links = {
+        GitHub: "https://github.com/GregSherman",
+        LinkedIn: "https://www.linkedin.com/in/gregsherman-/",
+        Resume: "/documents/Greg Sherman Resume.pdf",
+        Email: "mailto:swe@gregsherman.ca",
+      };
     }
+
+    let linkElements = [];
+    for (let key in links) {
+      linkElements.push(
+        <a
+          href={links[key]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link"
+        >
+          {key}
+        </a>
+      );
+    }
+
     return (
       <div>
         <div id="wave-container">
@@ -49,40 +77,7 @@ export default class App extends Component {
         <div className="name-container">
           <h1 className="name">{name}</h1>
         </div>
-        <div className="links-container">
-          <a
-            href="https://github.com/GregSherman"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/gregsherman-/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="/documents/Greg Sherman Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link"
-          >
-            Resume
-          </a>
-          <a
-            href="mailto:swe@gregsherman.ca"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link"
-          >
-            Email
-          </a>
-        </div>
+        <div className="links-container">{linkElements}</div>
       </div>
     );
   }
