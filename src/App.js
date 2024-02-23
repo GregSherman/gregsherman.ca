@@ -12,7 +12,7 @@ const defaultConfig = {
   splatRadius: 0.012,
 };
 
-export default class App extends FluidAnimation {
+export default class App extends Component {
   state = {
     config: defaultConfig,
   };
