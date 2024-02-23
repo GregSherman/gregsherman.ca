@@ -3,13 +3,13 @@ import FluidAnimation from "react-fluid-animation";
 import "./App.css";
 
 const defaultConfig = {
-  textureDownsample: 1,
-  densityDissipation: 0.993,
-  velocityDissipation: 0.995,
+  textureDownsample: 0,
+  densityDissipation: 0.99,
+  velocityDissipation: 0.99,
   pressureDissipation: 0.9,
   pressureIterations: 25,
-  curl: 40,
-  splatRadius: 0.012,
+  curl: 100,
+  splatRadius: 0.005,
 };
 
 export default class App extends Component {
@@ -76,13 +76,6 @@ export default class App extends Component {
 
   componentDidMount() {
     this._interval = setInterval(() => {
-      this._animation.config = {
-        ...this._animation.config,
-        curl: Math.random() * 40 + 20,
-        densityDissipation: Math.random() * 0.007 + 0.992,
-        pressureDissipation: Math.random() * 0.15 + 0.8,
-        splatRadius: Math.random() * 0.007 + 0.005,
-      };
       const count = Math.floor(Math.random() * 6) + 1;
       this._animation.addRandomSplats(count);
     }, Math.floor(Math.random() * 4000) + 2000);
