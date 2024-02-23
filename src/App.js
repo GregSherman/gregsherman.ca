@@ -3,7 +3,7 @@ import FluidAnimation from "react-fluid-animation";
 import "./App.css";
 
 const defaultConfig = {
-  textureDownsample: 0,
+  textureDownsample: 0.2,
   densityDissipation: 0.99,
   velocityDissipation: 0.99,
   pressureDissipation: 0.9,
