@@ -41,7 +41,7 @@ export default class App extends Component {
         Resume: "",
         Email: "mailto:astro@katbenevides.com",
       };
-    } else {
+    } else if (process.env.REACT_APP_SITE_NAME === "Greg") {
       name = "GREG SHERMAN";
       links = {
         GitHub: "https://github.com/GregSherman",
