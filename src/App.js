@@ -8,7 +8,7 @@ const defaultConfig = {
   velocityDissipation: 1,
   pressureDissipation: 0.9,
   pressureIterations: 25,
-  curl: 40,
+  curl: 20,
   splatRadius: 0.01,
 };
 
@@ -38,10 +38,12 @@ export default class App extends Component {
     if (process.env.REACT_APP_SITE_NAME === "Kat") {
       name = "KAT BENEVIDES";
       links = {
-        Resume: "",
+        Resume: "/documents/Kat Benevides Resume.pdf",
         Email: "mailto:astro@katbenevides.com",
+        LinkedIn:
+          "https://www.linkedin.com/in/katerina-isabel-benevides-73584918b/",
       };
-    } else if (process.env.REACT_APP_SITE_NAME === "Greg") {
+    } else {
       name = "GREG SHERMAN";
       links = {
         GitHub: "https://github.com/GregSherman",
@@ -88,11 +90,12 @@ export default class App extends Component {
     const width = canvas.width;
     const height = canvas.height;
 
-    var color = [
-      1 + Math.random() * 1,
-      Math.random() * 1,
-      2 + Math.random() * 7,
-    ];
+    var color = [1 + Math.random() * 4, Math.random() * 1, Math.random() * 1];
+
+    if (process.env.REACT_APP_SITE_NAME === "Kat") {
+      color = [1 + Math.random() * 1, Math.random() * 1, 1 + Math.random() * 7];
+    }
+
     var x = width * Math.random();
     var y = height * Math.random();
     var dx = 2000 * (Math.random() - 0.5);

@@ -42,7 +42,7 @@ canvas {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-image: linear-gradient(342deg, #fdb3b3, #9c009f, #5ee7ff);
+  background-image: linear-gradient(342deg, #000000, #f39a9a);
   mix-blend-mode:color-dodge;
 }
 
@@ -63,7 +63,7 @@ canvas {
   text-align: center;
   text-decoration: none;
   pointer-events: all;
-  color: #e54ae8;
+  color: #f39a9a;
   mix-blend-mode:color-dodge;
 }
 
