@@ -42,8 +42,7 @@ canvas {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-image: linear-gradient(342deg, #000000, #fbfbfb);
-  mix-blend-mode:color-burn;
+  background-image: linear-gradient(342deg, #ffffff37, #ffffff31);
 }
 
 .links-container {
@@ -63,10 +62,9 @@ canvas {
   text-align: center;
   text-decoration: none;
   pointer-events: all;
-  color: #e100ff;
-  mix-blend-mode:color-burn;
+  color: #ffffff37;
 }
 
 .links-container a:hover {
-  mix-blend-mode:normal;
+  color: #d17474;
 }
