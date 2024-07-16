@@ -75,11 +75,11 @@ export default class App extends Component {
             animationRef={this._animationRef}
             config={config}
           />
+          <div className="name-container">
+            <h1 className="name">{name}</h1>
+          </div>
+          <div className="links-container">{linkElements}</div>
         </div>
-        <div className="name-container">
-          <h1 className="name">{name}</h1>
-        </div>
-        <div className="links-container">{linkElements}</div>
       </div>
     );
   }
