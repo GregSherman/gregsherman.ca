@@ -93,7 +93,13 @@ export default class App extends Component {
     var color = [1 + Math.random() * 4, Math.random() * 1, Math.random() * 1];
 
     if (process.env.REACT_APP_SITE_NAME === "Kat") {
-      color = [1 + Math.random() * 1, Math.random() * 1, 1 + Math.random() * 7];
+      const deep_blue = [0.25, 0.25, 1.12];
+      color = deep_blue.map((c) => c + (Math.random() - 0.5) * 0.5);
+
+      // 1 in 100, make it red
+      if (Math.random() < 0.02) {
+        color = [1.5, 0.5, 0.5];
+      }
     }
 
     var x = width * Math.random();
